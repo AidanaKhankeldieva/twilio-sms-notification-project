@@ -4,11 +4,10 @@ const express = require("express");
 //const path = require("path");
 const cors = require("cors");
 const twilio = require("twilio");
-const serverless = require("serverless-http");
 
 const app = express();
 
-const router = express.Router();
+//const router = express.Router();
 //twilio requirements  -- use dotenv
 require("dotenv").config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -23,16 +22,16 @@ app.use(express.json());
 //   res.header("Access-Control-Allow-Origin");
 // });
 
-app.use(express.static("dist"));
-app.use("/.netlify/functions/index", router); //check path again
+app.use(express.static("public"));
+//check path again
 
 //welcome page
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Welcome to the Express Server");
 });
 
 //twilio text
-router.get("/send-text", (req, res) => {
+app.get("/send-text", (req, res) => {
   //_GET variables, passed via query string
   const { recipient, textmessage } = req.query;
 
@@ -45,7 +44,7 @@ router.get("/send-text", (req, res) => {
     })
     .then((message) => console.log(message.body));
 });
-module.exports.handler = serverless(app);
+
 //set up port to listen
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Server is running on port ", port));

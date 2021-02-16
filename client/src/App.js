@@ -15,7 +15,7 @@ class App extends Component {
 
     //pass var
     fetch(
-      `http://localhost:5000/send-text?recipient=${recipient}&textmessage=${textmessage}`
+      `/send-text?recipient=${recipient}&textmessage=${textmessage}` //http://localhost:5000
     ).catch((err) => console.log(err));
     this.setState({ recipient: "" });
     this.setState({ textmessage: "" });
