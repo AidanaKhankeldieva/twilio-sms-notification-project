@@ -1,7 +1,7 @@
 //install dependencies: $npm install express cors twilio
 
 const express = require("express");
-//const path = require("path");
+const path = require("path");
 const cors = require("cors");
 const twilio = require("twilio");
 
@@ -22,8 +22,10 @@ app.use(express.json());
 //   res.header("Access-Control-Allow-Origin");
 // });
 
+//declarationapp.use(express.static(path.join(__dirname, 'client/build')));
+
+//prev
 app.use(express.static("public"));
-//check path again
 
 //welcome page
 app.get("/", (req, res) => {
