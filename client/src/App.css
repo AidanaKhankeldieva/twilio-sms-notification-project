@@ -1,0 +1,50 @@
+body {
+  background-color: rgb(51, 3, 27);
+}
+.App {
+  border: 3px solid rgb(4, 44, 77);
+  width: 40vw;
+  height: 80vh;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgb(100, 124, 143);
+}
+
+.textheader {
+  text-align: center;
+  color: white;
+}
+
+form {
+  border: 3px solid rgb(211, 207, 207);
+  background-color: rgb(120, 167, 196);
+  width: 80%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  display: block;
+  margin: 20px auto;
+}
+input {
+  height: 5vh;
+}
+h3 {
+  text-align: center;
+  margin-top: 18px;
+}
+
+button {
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  background-color: rgb(21, 131, 221);
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  border: none;
+  margin: 30px;
+  margin-left: 35%;
+}
