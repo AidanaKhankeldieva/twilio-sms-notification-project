@@ -25,7 +25,7 @@ app.use(express.json());
 //declarationapp.use(express.static(path.join(__dirname, 'client/build')));
 
 //prev
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 //welcome page
 app.get("/", (req, res) => {
@@ -37,6 +37,9 @@ app.get("/send-text", (req, res) => {
   //_GET variables, passed via query string
   const { recipient, textmessage } = req.query;
 
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/clienta/build/index.html"));
+  });
   //send text
   client.messages
     .create({
