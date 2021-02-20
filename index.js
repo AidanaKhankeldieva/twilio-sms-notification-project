@@ -39,7 +39,7 @@ app.get("/send-text", (req, res) => {
   const { recipient, textmessage } = req.query;
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/clienta/build/index.html"));
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
   });
   //send text
   client.messages
